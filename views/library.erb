@@ -1,20 +1,20 @@
 <% @artists.each do |artist| %>
-<p><b>Artist:</b> <%= artist.name %></p>
-<p><b>Albums:</b> <% @albums.each do |album| %>
-<% if artist.id == album.artist_id %>
-<ul><%= album.name %></ul>
-<% end %></p>
-<% end %>
+  <p><b>Artist:</b> <%= artist.name %></p>
+  <p><b>Albums:</b> <% @albums.each do |album| %>
+    <% if artist.id == album.artist_id %>
+      <ul><%= album.name %></ul>
+    <% end %></p>
+  <% end %>
 
-<form action="/album/new" method="post">
-  <input type="text" name="name">
-  <select name="artist_id" style='display:none'>
-    <option value="<%= artist.id %>"><%= artist.name %></option>
-  </select>
-  <input type='submit' value="Add Album">
-</form>
+  <form action="/album/new" method="post">
+    <input type="text" name="name">
+      <select name="artist_id" style='display:none'>
+        <option value="<%= artist.id %>"><%= artist.name %></option>
+      </select>
+    <input type='submit' value="Add Album">
+  </form>
 
-<hr>
+  <hr>
 <% end %>
 
 <form action="/artist/new" method="post">

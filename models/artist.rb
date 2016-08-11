@@ -32,11 +32,4 @@ class Artist
     return result
   end
 
- # def self.search_by_name(name)
- #   sql = "SELECT * FROM artists WHERE #{@name} = name"
- #   artist = SqlRunner.run(sql).first
- #   binding.pry
- #   return artist['id']
- # end
-
 end
